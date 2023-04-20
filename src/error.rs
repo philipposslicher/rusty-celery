@@ -171,6 +171,7 @@ impl BrokerError {
                 lapin::Error::ProtocolError(_)
                     | lapin::Error::InvalidConnectionState(_)
                     | lapin::Error::InvalidChannelState(_)
+                    | lapin::Error::IOError(_)
             ),
             BrokerError::RedisError(err) => {
                 err.is_connection_dropped() || err.is_connection_refusal()
